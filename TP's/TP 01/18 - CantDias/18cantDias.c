@@ -7,6 +7,7 @@ typedef struct
 		anio;
 } t_fecha;
 
+int validarFecha (t_fecha);
 int cantDias (t_fecha, t_fecha);
 int cantidadDiasDelMes(int, int);
 int bisiesto (int);
@@ -18,22 +19,37 @@ int main ()
 			fch2;
 
 	// programa
-	printf ("-----Cantidad de dias entre dos fechas-----\n");
+	printf ("-----Cantidad de dias entre dos fechas-----\n   ACLARACION: fecha 1 < fecha 2\n\n");
 	printf("//Primera fecha:\n");
 	printf("Dia: ");
 	scanf("%d", &fch1.dia);
-	printf("\nMes: ");
+	printf("Mes: ");
 	scanf("%d", &fch1.mes);
-	printf("\nAnio: ");
+	printf("Anio: ");
 	scanf("%d", &fch1.anio);
-	printf("\n\n");
-	printf("//Segunda fecha:\n");
+	if(validarFecha(fch1))
+		printf("Fecha correcta.\n");
+	else
+	{
+		printf("Error al ingresar la fecha. El programa finalizara.\n");
+		return 1;
+	}
+
+	printf("\n//Segunda fecha:\n");
 	printf("Dia: ");
 	scanf("%d", &fch2.dia);
-	printf("\nMes: ");
+	printf("Mes: ");
 	scanf("%d", &fch2.mes);
-	printf("\nAnio: ");
+	printf("Anio: ");
 	scanf("%d", &fch2.anio);
+	if(validarFecha(fch2))
+		printf("//Fecha correcta.\n");
+	else
+	{
+		printf("Error al ingresar la fecha. El programa finalizara.\n");
+		return 1;
+	}
+
 	printf("\n------Resultado------\n");
 	printf("Cantidad de dias: %d\n\n", cantDias(fch1, fch2) );
 
@@ -47,18 +63,42 @@ int main ()
 //--cantDias--//
 int cantDias (t_fecha fecha1, t_fecha fecha2)
 {
-	t_fecha aux;
-	int cd = (fecha2.anio-fecha1.anio)*365;
+	int acum=0;
 
-	if(fecha1.mes == fecha2.mes)
-	{
-		cd += fecha2.dia - fecha1.dia;
-		return cd;
-	}
+	if (fecha2.anio==fecha1.anio && fecha2.mes == fecha1.mes)
+		return (fecha2.dia - fecha1.dia);
 	else
 	{
-		
+		acum += cantidadDiasDelMes(fecha1.mes, fecha1.anio) - fecha1.dia;
+        acum += fecha2.dia;
+		while (fecha1.anio <= fecha2.anio)
+			if (fecha1.anio == fecha2.anio && (fecha1.mes == fecha2.mes-1 || fecha1.mes == fecha2.mes) )
+				return acum;
+			else
+			{
+				fecha1.mes++;
+				if (fecha1.mes <= 12)
+                    acum += cantidadDiasDelMes(fecha1.mes, fecha1.anio);
+				else
+				{
+					fecha1.mes = 1;
+					fecha1.anio++;
+				}
+			}
 	}
+
+	return acum;
+}
+
+//--validarFecha--//
+int validarFecha (t_fecha fecha)
+{
+  if( fecha.anio>=0 && fecha.anio<=7000)
+    if ( fecha.mes>= 1 &&  fecha.mes<= 12 )
+        if( fecha.dia >=1 && fecha.dia <= cantidadDiasDelMes(fecha.mes,fecha.anio) )
+           return 1;
+
+   return 0;
 }
 
 

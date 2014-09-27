@@ -14,8 +14,8 @@ typedef struct
 void crearArchivoBinario ();
 void crearArchivoTexto ();
 int abrirArchivo (FILE **fp, const char *nombre, const char *modo, int conSin);
-void mostrarArchivoBinario(FILE **);
-void mostrarArchivoTexto(FILE **);
+void mostrarArchivoBinario(FILE *);
+void mostrarArchivoTexto(FILE *);
 
 int main ()
 {
@@ -24,17 +24,16 @@ int main ()
 	FILE *fpBin,
 		 *fpTxt;
 
-	// programa
-	/* SI LOS ARCHIVOS NO ESTAN CREADOS, DESCOMENTAR LINEAR
+
 	crearArchivoBinario(nombreBinario);
 	crearArchivoTexto(nombreTexto);
-	*/
+
 
 	if (abrirArchivo(&fpBin, nombreBinario, "rb", CON_MSJ))
-		mostrarArchivoBinario(&fpBin);
+		mostrarArchivoBinario(fpBin);
 
 	if (abrirArchivo(&fpTxt, nombreTexto, "rt", CON_MSJ))
-		mostrarArchivoTexto(&fpTxt);
+		mostrarArchivoTexto(fpTxt);
 
 	// fin
 	fclose(fpTxt);
@@ -53,7 +52,7 @@ void crearArchivoBinario ()
 	t_pers registros[]={
 		{1122333, "Sa, Lia", 'F'},
 		{4455666, "Lo, Pepe", 'M'},
-		{123412, "Cb, rde", 'M'}};
+		{1234124, "Cb, rde", 'M'}};
 
 	if(fp!=NULL)
 	{
@@ -97,10 +96,10 @@ int abrirArchivo (FILE **fp, const char *nombre, const char *modo, int conSin)
 }
 
 //--mostrarArchivoBinario--//
-void mostrarArchivoBinario (FILE **fp)
+void mostrarArchivoBinario (FILE *fp)
 {
 	t_pers aux;
-
+    rewind(fp);
 	printf("----RegistrosBinarios----\n");
 	while(fread(&aux, sizeof(t_pers), 1, fp))
 		printf("%ld %s %c\n",aux.dni, aux.apyn, aux.sex );
@@ -108,10 +107,10 @@ void mostrarArchivoBinario (FILE **fp)
 }
 
 //--mostrarArchivoTexto--//
-void mostrarArchivoTexto (FILE **fp)
+void mostrarArchivoTexto (FILE *fp)
 {
 	char aux[tam];
-
+    rewind(fp);
 	printf("----RegistrosTexto----\n");
 
 	while(fgets(aux, sizeof(t_pers), fp))

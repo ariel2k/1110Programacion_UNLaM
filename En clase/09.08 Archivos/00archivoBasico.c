@@ -25,14 +25,14 @@ int main ()
 		 *fpTxt;
 
 
-	crearArchivoBinario(nombreBinario);
-	crearArchivoTexto(nombreTexto);
+	//crearArchivoBinario(nombreBinario);
+	//crearArchivoTexto(nombreTexto);
 
 
-	if (abrirArchivo(&fpBin, nombreBinario, "rb", CON_MSJ))
+	if (abrirArchivo(&fpBin, nombreBinario, "rb", CON_MSJ)) //Si puede abrir archivo, que lo muestre
 		mostrarArchivoBinario(fpBin);
 
-	if (abrirArchivo(&fpTxt, nombreTexto, "rt", CON_MSJ))
+	if (abrirArchivo(&fpTxt, nombreTexto, "rt", CON_MSJ))	//Si puede abrir archivo, que lo muestre
 		mostrarArchivoTexto(fpTxt);
 
 	// fin

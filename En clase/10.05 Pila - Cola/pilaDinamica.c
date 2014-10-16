@@ -1,3 +1,5 @@
+#include "pilaDinamica.h"
+
 void crearPila 	 (t_pila *p)
 {
 	*p = NULL;

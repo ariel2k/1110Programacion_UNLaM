@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "esPalindromo.h"
 
 int main()
 {
@@ -13,21 +14,4 @@ int main()
         puts("\nNo es palindromo.");
 
     return 0;
-}
-
-int esPalindromo(const char *s)
-{
-    const char *fin = s;
-
-    while(*fin)
-        fin ++;
-    fin--;
-
-    while(s < fin && *s==*fin)
-    {
-        s++;
-        fin--;
-    }
-
-    return s>=fin;
 }

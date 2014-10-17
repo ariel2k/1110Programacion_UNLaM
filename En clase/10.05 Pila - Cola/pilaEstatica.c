@@ -1,4 +1,4 @@
-#include "pilaEstatica.h"
+#include <stio.h>
 
 void crearPila 	 (t_pila *p)
 {

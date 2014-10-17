@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "esPalindromo.h"
+#include "Palindromo.h"
 
 int main()
 {

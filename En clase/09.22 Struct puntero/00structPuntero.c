@@ -1,15 +1,9 @@
 #include <stdio.h>
 
-/*--Estructs--*/
-typedef struct{
-	int dia, mes, anio;
-} t_fecha;
-
 typedef struct{
 	char nombre[20],
 		 apellido[20];
 	long	 dni;
-	//t_fecha  fech;
 } t_pers;
 
 void llenarStruct (t_pers *p, long dni);
@@ -49,22 +43,15 @@ int main ()
 //--llenarStruct--//
 void llenarStruct (t_pers *p, long dni)
 {
-	p->dni = dni;
+    t_pers *aux = p;
+	aux->dni = dni;
 	printf("Nombre: ");
 	fflush(stdin);
-	scanf("%c",p->nombre);
+	scanf("%c",aux->nombre);
 	printf("\nApellido: ");
     fflush(stdin);
-	scanf("%c",p->apellido);
-	/*printf("\nFecha Nac:\n---dia: ");
-	fflush(stdin);
-	scanf("%d",p->fech.dia);
-	printf("\n---mes: ");
-	fflush(stdin);
-	scanf("%d",p->fech.mes);
-	printf("\n---anio: ");
-	fflush(stdin);
-	scanf("%d",p->fech.anio);*/
+	scanf("%c",aux->apellido);
+	aux++;
 }
 
 //--mostrarSruct--//

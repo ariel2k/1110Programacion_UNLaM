@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <conio.h> //Directiva free.
 #include "personas.h"
+#include "pilDinamica.c"
 
 /* Macro remplazos */
 #define t_info t_pers

@@ -1,4 +1,4 @@
-#include "esPalindromo.h"
+#include <stdio.h>
 
 int esPalindromo(const char *s)
 {

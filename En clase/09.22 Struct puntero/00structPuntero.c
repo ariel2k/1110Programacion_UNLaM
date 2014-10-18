@@ -16,12 +16,10 @@ int main ()
 {
 	// Varialbes
 	t_pers pers[40];
-	long   dni;
 	int	   cant;
 
 	// Programa
 	cant = llenarStruct(&pers);
-
 	mostrarSruct(&pers, cant);
 
 	// Fin
@@ -36,7 +34,6 @@ int llenarStruct (t_pers *p)
 {
     int dni,
         cant=0;
-    char nombre[20], apellido[20];
     t_pers *aux=p;
 
 	printf("-----Ingreso de Datos-----\n---DNI=0 termina ingreso---");
@@ -46,10 +43,10 @@ int llenarStruct (t_pers *p)
 	{
 		printf("Nombre: ");
 		fflush(stdin);
-		scanf("%c",&aux->nombre);
+		scanf("%s",aux->nombre);
 		printf("Apellido: ");
 	    fflush(stdin);
-		scanf("%c",&aux->apellido);
+		scanf("%s",aux->apellido);
 		aux->dni = dni;
 		printf("\nDni: ");
 		fflush(stdin);
@@ -69,7 +66,7 @@ void mostrarSruct (t_pers *p, int c)
 	printf("       Nombre       |       Apellido       |    Dni\n");
 	for (i=0 ; i<c ; i++)
     {
-	    printf("%20c %20c     %08d \n", p->nombre, p->apellido, p->dni);
+	    printf("%20s    %20s     %08d \n", p->nombre, p->apellido, p->dni);
 	    p++;
     }
 }

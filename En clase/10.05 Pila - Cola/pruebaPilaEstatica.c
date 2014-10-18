@@ -3,7 +3,7 @@
 
 typedef struct
 {
-	long dni;
+	int dni;
 	char apyn[36];
 	char sex;
 }t_info;
@@ -34,6 +34,8 @@ int main ()
 			printf("ERROR\n");
 			return 2;
 		}
+		else
+			printf("Ingreso exitoso\n");
 	}
 	return 0;
 }
@@ -61,13 +63,18 @@ int  ponerEnPila (t_pila *p, const t_info *d)
 
 void pedirDatos (t_info *p)
 {
+	int dni;
+
 	printf("----Ingresar Datos----\n");
+	printf("Apellido y nombre: ");
+	scanf("%s",p->apyn);
 	printf("DNI: ");
-	scanf("%ld",p->dni);
-	printf("\nApellido y nombre: ");
 	fflush(stdin);
-	scanf("%d",p->apyn);
-	printf("\nSexo: ");
+	scanf("%d",&dni);
+	p->dni = dni;
+	printf("Sexo: ");
 	fflush(stdin);
 	scanf("%c",p->sex);
+	
+	p++;
 }

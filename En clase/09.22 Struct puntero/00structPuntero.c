@@ -38,7 +38,7 @@ int llenarStruct (t_pers *p)
 
 	printf("-----Ingreso de Datos-----\n---DNI=0 termina ingreso---");
 	printf("\nDni: ");
-	scanf("%ld",&dni);
+	scanf("%d",&dni);
 	while(dni!=0)
 	{
 		printf("Nombre: ");
@@ -50,7 +50,7 @@ int llenarStruct (t_pers *p)
 		aux->dni = dni;
 		printf("\nDni: ");
 		fflush(stdin);
-        scanf("%ld",&dni);
+        scanf("%d",&dni);
 		aux++;
         cant++;
 	}

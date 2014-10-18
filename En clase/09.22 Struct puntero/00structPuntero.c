@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 typedef struct{
 	char nombre[20],
@@ -6,8 +7,8 @@ typedef struct{
 	long	 dni;
 } t_pers;
 
-void llenarStruct (t_pers *p, long dni);
-void mostrarSruct (t_pers *p);
+int llenarStruct (t_pers *p);
+void mostrarSruct (t_pers *p, int);
 
 /*--P. Principal--*/
 
@@ -16,22 +17,12 @@ int main ()
 	// Varialbes
 	t_pers pers[40];
 	long   dni;
+	int	   cant;
 
 	// Programa
-	printf("-----Ingreso de Datos-----\n---DNI=0 termina ingreso---");
-	printf("\nDni: ");
-	scanf("%ld",&dni);
-	while (dni!=0)
-	{
-		llenarStruct(&pers, dni);
-		printf("\n---Nuevo Reg---");
-		printf("\nDni: ");
-		fflush(stdin);
-		scanf("%ld",&dni);
-	}
+	cant = llenarStruct(&pers);
 
-	printf("//------Fin Ingreso------//\n");
-	mostrarSruct(&pers);
+	mostrarSruct(&pers, cant);
 
 	// Fin
 	system("pause");
@@ -41,22 +32,44 @@ int main ()
 /*--Funciones--*/
 
 //--llenarStruct--//
-void llenarStruct (t_pers *p, long dni)
+int llenarStruct (t_pers *p)
 {
-    t_pers *aux = p;
-	aux->dni = dni;
-	printf("Nombre: ");
-	fflush(stdin);
-	scanf("%c",aux->nombre);
-	printf("\nApellido: ");
-    fflush(stdin);
-	scanf("%c",aux->apellido);
-	aux++;
+    int dni,
+        cant=0;
+    char nombre[20], apellido[20];
+    t_pers *aux=p;
+
+	printf("-----Ingreso de Datos-----\n---DNI=0 termina ingreso---");
+	printf("\nDni: ");
+	scanf("%ld",&dni);
+	while(dni!=0)
+	{
+		printf("Nombre: ");
+		fflush(stdin);
+		scanf("%c",&aux->nombre);
+		printf("Apellido: ");
+	    fflush(stdin);
+		scanf("%c",&aux->apellido);
+		aux->dni = dni;
+		printf("\nDni: ");
+		fflush(stdin);
+        scanf("%ld",&dni);
+		aux++;
+        cant++;
+	}
+
+	return cant;
 }
 
 //--mostrarSruct--//
-void mostrarSruct (t_pers *p)
+void mostrarSruct (t_pers *p, int c)
 {
-	printf("       Nombre       |       Apellido       |    Dni    |    Fecha Nac\n");
-    printf("%20c %20c %08d \n", p->nombre, p->apellido, p->dni);
+	int i;
+
+	printf("       Nombre       |       Apellido       |    Dni\n");
+	for (i=0 ; i<c ; i++)
+    {
+	    printf("%20c %20c     %08d \n", p->nombre, p->apellido, p->dni);
+	    p++;
+    }
 }

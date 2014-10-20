@@ -66,15 +66,14 @@ void pedirDatos (t_info *p)
 	int dni;
 
 	printf("----Ingresar Datos----\n");
-	printf("Apellido y nombre: ");
-	scanf("%s",p->apyn);
 	printf("DNI: ");
+	scanf("%d",p->dni);
+	printf("Apellido y nombre: ");
 	fflush(stdin);
-	scanf("%d",&dni);
-	p->dni = dni;
+	scanf("%s",p->apyn);
 	printf("Sexo: ");
 	fflush(stdin);
 	scanf("%c",p->sex);
-	
+
 	p++;
 }

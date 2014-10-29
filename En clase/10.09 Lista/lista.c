@@ -1,4 +1,13 @@
-void crearLista 	 (t_lista *p)
+#include <stdio.h>
+#include <conio.h>
+#include "lista.h"
+#include "comparar.h"
+
+#define CLA_DUP 4
+#define SIN_MEM 5
+#define TODO_BIEN 1
+
+void crearLista (t_lista *p)
 {
 	*p = NULL;
 }
@@ -26,7 +35,7 @@ int ponerAlFinal 	 (t_lista *p, const t_info *d)
 	while(*p)
 		p=&(*p)->sig;
 	*p=(t_nodo *)malloc(sizeof(t_nodo));
-	if(*p==NUL)
+	if(*p==NULL)
 		return 0;
 	(*p)->info = *d;
 	(*p)->sig = NULL;
@@ -38,7 +47,7 @@ int insertarEnOrden  (t_lista *p, const t_info *d, int (*comparar)(const t_info 
 	t_nodo *nue;
 	while (*p && comparar(d, &(*p)->info)>0)
 		p = &(*p)->sig;
-	if(*p && comparar(d,&(*p)->infor)==0)
+	if(*p && comparar(d,&(*p)->info)==0)
 	{
 		acumular(&(*p)->info,d);
 		return CLA_DUP;
@@ -64,7 +73,7 @@ void ordernarListaBurbu (t_lista *p)
 			q=p;
 			while((*p)->sig)
 			{
-				if(compara(&(*p)->info, &(*q)->info)>0)
+				if(comparar(&(*p)->info, &(*q)->info)>0)
 				{
 					marca=1;
 					act=*q;

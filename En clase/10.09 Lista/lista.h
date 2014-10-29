@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "personas.h"
-#include "lista.c"
 
 /* Macro remplazos */
 #define t_info t_pers

@@ -20,10 +20,14 @@ Complejo::Complejo(float re, float im)
 
 void Complejo::mostrar() const
 {
-	cout << re << " + " << im << "i " << endl;
+	cout << re
+         << " + "
+         << im
+         << "i "
+         << endl;
 }
 
-ostream &operator<< (ostream &sal, const Complejo &obj)
+ostream &operator<< (iostream &sal, const Complejo &obj)
 {
 	sal << obj.re << " + " << obj.im << "i " << endl;
 	return sal;

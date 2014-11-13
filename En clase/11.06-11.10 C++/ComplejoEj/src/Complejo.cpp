@@ -27,20 +27,20 @@ void Complejo::mostrar() const
          << endl;
 }
 
-ostream &operator<< (iostream &sal, const Complejo &obj)
+ostream &operator<< (ostream &sal, const Complejo &obj)
 {
 	sal << obj.re << " + " << obj.im << "i " << endl;
 	return sal;
 }
 
-Complejo Complejo::operator+ (const Complejo &obj)	//c1+c2 (1)
+Complejo Complejo::operator+ (const Complejo &obj) const	//c1+c2 (1)
 {
 	return Complejo(re + obj.re, im + obj.im);
 }
 
 Complejo Complejo::operator+ (float val) const		//c1+n (2)
 {
-	return (re+val, im);
+	return Complejo(re+val, im);
 }
 
 Complejo operator+ (float val, const Complejo &obj) //n+c1 (3)

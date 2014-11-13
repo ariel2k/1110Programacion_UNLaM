@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1415912366 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\en clase\11.13 c++\persona2ej\main.cpp
+	<iostream>
+	"PersonaDos.h"
+
+1415917037 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\en clase\11.13 c++\persona2ej\include\personados.h
+	<iostream>
+
+1415916711 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\en clase\11.13 c++\persona2ej\src\personados.cpp
+	"PersonaDos.h"
+
+1415917012 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\en clase\11.13 c++\persona2ej\dupcad.cpp
+	"dupcad.h"
+
+1415917072 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\en clase\11.13 c++\persona2ej\dupcad.h
+	<iostream>
+	"string.h"
+

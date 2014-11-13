@@ -1,7 +1,7 @@
 #ifndef COMPLEJO_H
 #define COMPLEJO_H
 #include <iostream>
-
+using namespace std;
 class Complejo
 {
     float re,
@@ -11,7 +11,7 @@ class Complejo
         //virtual ~Complejo();
  		Complejo(float re=0, float im=0); //constructor
  		void mostrar() const;
- 		friend iostream& operator<< (iostream &sal, const Complejo &obj);
+ 		friend ostream& operator<< (ostream &sal, const Complejo &obj);
 
  		Complejo operator+ (const Complejo &obj) const; 			//c1+c2  	(1)
  		Complejo operator+ (float val) const;						//c1+n		(2)

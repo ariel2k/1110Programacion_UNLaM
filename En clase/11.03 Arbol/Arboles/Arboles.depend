@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1415639560 source:c:\users\micaela\documents\unlam\codeblocks\clase\arboles\arboles.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arboles.h"
+
+1415639560 c:\users\micaela\documents\unlam\codeblocks\clase\arboles\arboles.h
+
+1415643170 source:c:\users\micaela\documents\unlam\codeblocks\clase\arboles\arboles.h
+
+1415639884 source:c:\users\micaela\documents\unlam\codeblocks\clase\arboles\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arboles.h"
+

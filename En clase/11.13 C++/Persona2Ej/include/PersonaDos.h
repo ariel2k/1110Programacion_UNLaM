@@ -1,7 +1,7 @@
 #ifndef PERSONADOS_H
 #define PERSONADOS_H
 #include <iostream>
-
+#include "../dupcad.h"
 
 using namespace std;
 

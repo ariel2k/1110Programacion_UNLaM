@@ -10,6 +10,7 @@ void crearArbol(t_arbol *p)
 {
     *p= NULL;
 }
+
 ///////////////////////////
 void enOrden( const t_arbol *p)
 {
@@ -20,6 +21,7 @@ void enOrden( const t_arbol *p)
         enOrden(&(*p)->der);
     }
 }
+
 ////////////////////////////////
 void preOrden( const t_arbol *p)
 {
@@ -30,6 +32,7 @@ void preOrden( const t_arbol *p)
         preOrden(&(*p)->der);
     }
 }
+
 ///////////////////////////////
 void posOrden( const t_arbol *p)
 {
@@ -40,13 +43,14 @@ void posOrden( const t_arbol *p)
         verNodo(&(*p)->info);
     }
 }
+
 ///////////////////////////////
 int ponerEnArbol(t_arbol *p, const t_info *d)
 {
     int cmp;
     while(*p)
     {
-        cmp = comparar(d,&(*p)->info);      //  <--- ¿Por qué "d" sin & y el otro con?
+        cmp = comparar(d,&(*p)->info);      
         if(cmp == 0)
             return CLA_DUP;
         if(cmp < 0)
@@ -63,6 +67,7 @@ int ponerEnArbol(t_arbol *p, const t_info *d)
 
     return TODO_BIEN;
 }
+
 ///////RECURSIVA/////////
 int ponerEnArbolR(t_arbol *p, const t_info *d)
 {
@@ -86,6 +91,7 @@ int ponerEnArbolR(t_arbol *p, const t_info *d)
 
     return TODO_BIEN;
 }
+
 ///////////////////////////////
 int alturaArbol(const t_arbol *p)
 {
@@ -98,6 +104,7 @@ int alturaArbol(const t_arbol *p)
     }
     return 0;
 }
+
 //////////////////////////////
 int contarNodosArbol(const t_arbol *p)
 {
@@ -105,6 +112,7 @@ int contarNodosArbol(const t_arbol *p)
         return contarNodosArbol(&(*p)->izq) + contarNodosArbol(&(*p)->der) + 1;
     return 0;
 }
+
 //////////////////////////////
 int esCompleto(const t_arbol *p)
 {
@@ -113,6 +121,7 @@ int esCompleto(const t_arbol *p)
 
     return dosAlaH(h)-1 == c;
 }
+
 /////////////////////////////
 int dosAlaH (int h)
 {
@@ -124,6 +133,7 @@ int dosAlaH (int h)
     }
     return acum;
 }
+
 /////OTRA FORMA/////////////
 int esArbolCompleto(const t_arbol *p)
 {
@@ -131,6 +141,7 @@ int esArbolCompleto(const t_arbol *p)
 
     return verSiEsCompleto(p,h);
 }
+
 ////////////////////////////
 int verSiEsCompleto(const t_arbol *p, int h) /**/
 {
@@ -139,6 +150,7 @@ int verSiEsCompleto(const t_arbol *p, int h) /**/
 
     return h==0;
 }
+
 ////////////////////////////
 int esBalanceado(const t_arbol *p)
 {
@@ -147,6 +159,7 @@ int esBalanceado(const t_arbol *p)
 
     return dosAlaH(h-1)-1 == c;
 }
+
 ///////////////////////////
 int contarNodosHastaHmenos1(const t_arbol *p, int h)
 {
@@ -155,6 +168,7 @@ int contarNodosHastaHmenos1(const t_arbol *p, int h)
 
     return 0;
 }
+
 /////OTRA MANENA////////////
 int esArbolBalanceado(const t_arbol *p)
 {
@@ -162,6 +176,7 @@ int esArbolBalanceado(const t_arbol *p)
 
     return verSiEsBalanceado(p,h);
 }
+
 ////////////////////////////
 int verSiEsBalanceado(const t_arbol *p, int h)
 {
@@ -170,6 +185,7 @@ int verSiEsBalanceado(const t_arbol *p, int h)
 
     return h<=1;
 }
+
 ////////////////////////////
 int esArbolAVL( const t_arbol *p)
 {
@@ -184,6 +200,7 @@ int esArbolAVL( const t_arbol *p)
     }
     return 1;
 }
+
 ////////////////////////////
 int contarHojas(const t_arbol *p)
 {
@@ -195,6 +212,7 @@ int contarHojas(const t_arbol *p)
     }
     return 0;
 }
+
 ////////////////////////////
 int contarNodosInternos(const t_arbol *p)
 {
@@ -203,6 +221,7 @@ int contarNodosInternos(const t_arbol *p)
 
     return 0;
 }
+
 ////////////////////////////
 int contarNodosRamaIzquierda(const t_arbol *p)
 {
@@ -211,6 +230,7 @@ int contarNodosRamaIzquierda(const t_arbol *p)
 
     return 0;
 }
+
 ////////////////////////////
 void vaciarArbol(t_arbol *p)
 {
@@ -222,6 +242,7 @@ void vaciarArbol(t_arbol *p)
         *p=NULL;
     }
 }
+
 ////////////////////////////
 int vaciarArbolYContar(t_arbol *p)
 {
@@ -235,6 +256,7 @@ int vaciarArbolYContar(t_arbol *p)
     }
     return 0;
 }
+
 ///////////////////////////
 int vaciarArbolMostrarEnOrdenGrabarEnPreYContar(t_arbol *p)//, FILE *fp)
 {
@@ -251,20 +273,23 @@ int vaciarArbolMostrarEnOrdenGrabarEnPreYContar(t_arbol *p)//, FILE *fp)
     }
     return 0;
 }
+
 //////////////////////////
 void mostrar(t_info *d)
 {
     printf(" %c |", (*d).n );
 }
+
 //////////////////////////
 void verNodo(t_info *d)
 {
     printf(" %d |", (*d).n );
 }
+
 //////////////////////////
 int comparar(const t_info *d1,const t_info *d2)
 {
-    return ((*d1).n - (*d2).n);
+    return ((*d1).n - (*d2).n);bgggggggggg
 }
 
 ////////////////////
@@ -279,4 +304,81 @@ int contIzquierda(t_arbol *p)
         }
     return cant;
 }
+ 
+ int aQueAlturaORDENADO (const t_arbol *p, const t_info *d)
+ {
+    int comp;
+    int h=0;
+
+    while(*p)
+    {
+        cmp = comparar(d, &(*p)->info);
+        h++;
+        if(cmp==0)
+            return h;
+        if(cmp<0)
+            p=&(*p)->izq;
+        else 
+            p=&(*p)->der;
+    }
+    return 0;
+ }
+
+ int aQueAlturaDESORDENADO (const t_arbol *p, const t_infor *d)
+ {
+    return buscar(p, d, 0);
+    //return buscar2(p, d, 0);
+ }
+
+ int buscar (const t_arbol *p, const t_infor *d, int h)
+ {
+    if(*p)
+    {
+        if(comparar(d, &(*p)->infor)==0)
+            return h+1;
+        return buscar(&(*p)->izq, d, h+1) || buscar(&(*p)->der, d, h+1);
+    }
+    return 0;
+ }
+
+ int buscar2 (const t_arbol *p, const t_infor *d, int h)
+ {
+    int cmp;
+    if(*p)
+    {
+        cmp = comparar(d, &(*p)->infor);
+        if(cmp==0)
+            return h+1;
+
+        if(cmp<0)
+            buscar2(&(*p)->izq, d, h+1) 
+        else
+            buscar2(&(*p)->der, d, h+1);
+    }
+    return 0;
+ }
+
 */
+int podarAAlturaX(t_arbol *p, int h) //queres que quede a la altura 'h'
+{
+    if(*p)
+    {
+        if(h==0)
+            return eliminarArbol(p);
+
+        return podarAAlturaX(&(p)->izq, h-1) + podarAAlturaX(&(p)->der, h-1);
+    }
+    return 0;
+}
+
+int eliminarArbol(t_arbol *p)
+{
+    if(*p)
+    {
+        int cant = eliminarArbol(&(p)->izq) + eliminarArbol(&(*p)->der);
+        free(*p);
+        *p=NULL;
+        return cant+1;
+    }
+    return 0;
+}

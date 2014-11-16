@@ -2,8 +2,6 @@
 
 using namespace std;
 
-//------------------------------Métodos públicos------------------------------//
-
 PersonaDos::PersonaDos()
 	:	dni(0), sex(' '), apyn(NULL) {}
 
@@ -65,8 +63,9 @@ istream& operator>> (istream &ent, PersonaDos &obj)
 	ent	 >> obj.sex;
 	char aux[500];
 	cout << "APyN: ";
-	ent.getline(aux, sizeof(aux), '\n');// .getline(aux, sizeof(aux), "\n");
 	ent.ignore(1000, '\n');
+	ent.getline(aux, sizeof(aux), '\n');// .getline(aux, sizeof(aux), "\n");
+	//ent.ignore(1000, '\n');
 	delete []obj.apyn;
 	obj.apyn = duplicarCadena(aux);
 	if(obj.apyn == NULL && aux[0]!='\n')

@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1416232696 source:c:\users\camila\documents\programación\temas 2 parcial\nueva carpeta\project\dupcad.cpp
+	"dupcad.h"
+
+1416232700 c:\users\camila\documents\programación\temas 2 parcial\nueva carpeta\project\dupcad.h
+	<iostream>
+	"string.h"
+
+1416232307 source:c:\users\camila\documents\programación\temas 2 parcial\nueva carpeta\project\main.cpp
+	<iostream>
+	"empleado.h"
+
+1416233112 c:\users\camila\documents\programación\temas 2 parcial\nueva carpeta\project\empleado.h
+	<iostream>
+	"dupcad.h"
+
+1416233112 source:c:\users\camila\documents\programación\temas 2 parcial\nueva carpeta\project\empleado.cpp
+	"empleado.h"
+
+1416262863 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\en clase\11.17 c++ (empleados)\empleadoej\main.cpp
+	<iostream>
+	"empleado.h"
+
+1416262819 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\en clase\11.17 c++ (empleados)\empleadoej\empleado.h
+	<iostream>
+	"dupcad.h"
+
+1416232700 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\en clase\11.17 c++ (empleados)\empleadoej\dupcad.h
+	<iostream>
+	"string.h"
+
+1416232696 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\en clase\11.17 c++ (empleados)\empleadoej\dupcad.cpp
+	"dupcad.h"
+
+1416263163 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\en clase\11.17 c++ (empleados)\empleadoej\empleado.cpp
+	"empleado.h"
+

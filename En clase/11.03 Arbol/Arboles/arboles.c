@@ -183,7 +183,7 @@ int verSiEsBalanceado(const t_arbol *p, int h)
     if(*p)
         return verSiEsBalanceado(&(*p)->izq, h-1) && verSiEsBalanceado(&(*p)->der, h-1);
 
-    return h<=1;
+    return h<=1; // <-- h<=2 ^^Es balanceado cuando tiene hojas en su último nivel o nivel anterior^^
 }
 
 ////////////////////////////
@@ -289,7 +289,7 @@ void verNodo(t_info *d)
 //////////////////////////
 int comparar(const t_info *d1,const t_info *d2)
 {
-    return ((*d1).n - (*d2).n);bgggggggggg
+    return ((*d1).n - (*d2).n);
 }
 
 ////////////////////

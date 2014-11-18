@@ -20,7 +20,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Punto.cpp" />
+		<Unit filename="Punto.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="matrizEsferica.cpp" />
+		<Unit filename="matrizEsferica.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

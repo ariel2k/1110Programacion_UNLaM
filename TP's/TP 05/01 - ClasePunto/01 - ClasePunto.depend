@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1416270946 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 05\01 - clasepunto\main.cpp
+	<iostream>
+	"Punto.h"
+
+1416270683 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 05\01 - clasepunto\punto.h
+	<iostream>
+	"matrizEsferica.h"
+
+1416268952 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 05\01 - clasepunto\matrizesferica.h
+
+1416270972 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 05\01 - clasepunto\punto.cpp
+	"Punto.h"
+
+1416270696 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 05\01 - clasepunto\matrizesferica.cpp
+	"matrizEsferica.h"
+

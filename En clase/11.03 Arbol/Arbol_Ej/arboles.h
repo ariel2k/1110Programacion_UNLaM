@@ -19,7 +19,9 @@
 
 typedef struct
 {
-    int n;
+    int  legajo;
+    char apyn[35],
+         cargo[15];
 }t_info;
 
 typedef struct s_nodo

@@ -5,7 +5,8 @@
 int main()
 {
     FILE *archivo = fopen("arbol_arch","wb");
-    t_info datos[]= {4,7,9,2,0,1,6,8,3};
+    t_info datos[]= {
+                    {4},{7},{9},{2},{0},{1},{6},{8},{3}};
 
     if(archivo!=NULL)
     {
@@ -36,7 +37,7 @@ int main()
         printf("\nES");
     else
         printf("\nNO ES");
-    printf("\n %d", contIzquierda(&arb));
+    printf("\n %d", contarNodosRamaIzquierda(&arb));
 
     return 0;
 }

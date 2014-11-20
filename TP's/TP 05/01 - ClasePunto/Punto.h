@@ -16,8 +16,20 @@ public:
     Punto();
 	Punto(int x);
 	Punto(int x, int y);
+	Punto& operator= (const Punto &obj);
+	friend ostream& operator<< (ostream &sal, const Punto &obj);  //   cout << p3 
+	friend istream& operator>> (istream &ent, Punto &obj);			// cin >> p1 
+	
+	Punto operator+ (const Punto &obj) const; 				//p1+p2  	(1)
+	Punto operator- (const Punto &obj) const; 				//p1+p2  	(1)
+	
+	Punto& operator++ (); 	//pre-incremento
+	Punto  operator++ (int); //pos-incremento
+	Punto& operator-- (); 	//pre-decremento
+	Punto  operator-- (int); //pos-decremento
 
-
+	Punto operator+= (const Punto &obj);
+	Punto operator-= (const Punto &obj);
 };
 
 

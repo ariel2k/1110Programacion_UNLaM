@@ -143,7 +143,7 @@ int esArbolCompleto(const t_arbol *p)
 }
 
 ////////////////////////////
-int verSiEsCompleto(const t_arbol *p, int h) 
+int verSiEsCompleto(const t_arbol *p, int h) /**/
 {
     if(*p)
         return verSiEsCompleto(&(*p)->izq, h-1) && verSiEsCompleto(&(*p)->der, h-1);
@@ -277,19 +277,19 @@ int vaciarArbolMostrarEnOrdenGrabarEnPreYContar(t_arbol *p)//, FILE *fp)
 //////////////////////////
 void mostrar(t_info *d)
 {
-    printf(" %c |", (*d).n );
+    printf(" %c |", (*d).legajo );
 }
 
 //////////////////////////
 void verNodo(t_info *d)
 {
-    printf(" %d |", (*d).n );
+    printf(" %d |", (*d).legajo);
 }
 
 //////////////////////////
 int comparar(const t_info *d1,const t_info *d2)
 {
-    return ((*d1).n - (*d2).n);
+    return ((*d1).legajo - (*d2).legajo);
 }
 
 ////////////////////

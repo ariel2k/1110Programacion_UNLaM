@@ -12,20 +12,18 @@
 //ARBOL AVL --> cuando la diferencia entre la altura de la rama izq y der es a lo sumo uno (en cada nodo)
 //PREODEN: NID  /  POSORDEN: IDN  /  ENORDEN: IND
 
-typedef struct
-{
-	int dia,
-		mes,
-		anio;
-} t_fecha;
 
 typedef struct
 {
     int  legajo;
     char apyn[35],
          cargo[15];
-    t_fecha fAlta,
-    	 fBaja;
+}t_reg;
+
+typedef struct
+{
+    int  nReg;
+    char clave[2],
 }t_info;
 
 typedef struct s_nodo

@@ -217,7 +217,7 @@ int contarHojas(const t_arbol *p)
 int contarNodosInternos(const t_arbol *p)
 {
     if(*p)
-        return contarNodosInternos(&(*p)->izq) + contarNodosInternos(&(*p)->der) + ((*p)->izq && (*p)->der); //el ultimo termino es el que va acumulando
+        return contarNodosInternos(&(*p)->izq) + contarNodosInternos(&(*p)->der) + ((*p)->izq!=NULL && (*p)->der!=NULL); //el ultimo termino es el que va acumulando
 
     return 0;
 }
@@ -265,7 +265,7 @@ int vaciarArbolMostrarEnOrdenGrabarEnPreYContar(t_arbol *p)//, FILE *fp)
     {
         // fwrite(&(*p)->info, sizeof(t_info),1,fp);
         cant = vaciarArbolMostrarEnOrdenGrabarEnPreYContar(&(*p)->izq); //, fp);
-        mostrar(&(*p)->info);
+        verNodo(&(*p)->info);
         cant += vaciarArbolMostrarEnOrdenGrabarEnPreYContar(&(*p)->der); //, fp);
         free(*p);
         *p = NULL;
@@ -275,15 +275,9 @@ int vaciarArbolMostrarEnOrdenGrabarEnPreYContar(t_arbol *p)//, FILE *fp)
 }
 
 //////////////////////////
-void mostrar(t_info *d)
-{
-    printf(" %c |", (*d).legajo );
-}
-
-//////////////////////////
 void verNodo(t_info *d)
 {
-    printf(" %d |", (*d).legajo);
+    printf("Legajo: %d | Apyn: %s | Cargo: %s\n", (*d).legajo, (*d).apyn, (*d).cargo);
 }
 
 //////////////////////////
@@ -383,3 +377,97 @@ int eliminarArbol(t_arbol *p)
     return 0;
 }
 */
+
+int mostrarNodosHojas (t_arbol *p)
+{
+    if(*p)
+    {
+        if((*p)->izq == (*p)->der)
+            verNodoCompleto(p);
+        mostrarNodosHojas(&(*p)->izq);
+        mostrarNodosHojas(&(*p)->der);
+    }
+    return 0;
+}
+
+int mostrarNodosNoHojas (t_arbol *p)
+{
+    if(*p)
+    {
+        if((*p)->izq != (*p)->der)
+            verNodoCompleto(p);
+        mostrarNodosNoHojas(&(*p)->izq);
+        mostrarNodosNoHojas(&(*p)->der);
+    }
+    return 0;
+}
+
+int mostrarNodosSoloHijosXIzq (t_arbol *p)
+{
+    if(*p)
+    {
+        if((*p)->der==NULL && (*p)->izq!=NULL)
+            verNodo(&(*p)->info);
+        mostrarNodosSoloHijosXIzq(&(*p)->izq);
+        mostrarNodosSoloHijosXIzq(&(*p)->der);
+    }
+    return 0;
+}
+
+int mostrarNodosHijosXIzq (t_arbol *p)
+{
+    if(*p)
+    {
+        if((*p)->izq!=NULL)
+            verNodo(&(*p)->info);
+        mostrarNodosHijosXIzq(&(*p)->izq);
+        mostrarNodosHijosXIzq(&(*p)->der);
+    }
+    return 0;
+}
+
+int podarAAlturaX(t_arbol *p, int h) //queres que quede a la altura 'h'
+{
+    if(*p)
+    {
+        if(h==0)
+            return eliminarArbol(p);
+
+        return podarAAlturaX(&(*p)->izq, h-1) + podarAAlturaX(&(*p)->der, h-1);
+    }
+    return 0;
+}
+
+int eliminarArbol(t_arbol *p)
+{
+    if(*p)
+    {
+        int cant = eliminarArbol(&(*p)->izq) + eliminarArbol(&(*p)->der);
+        free(*p);
+        *p=NULL;
+        return cant+1;
+    }
+    return 0;
+}
+
+
+int podarRamasAlturaX (t_arbol *p, int h)
+{
+    if(*p)
+    {
+        if(alturaArbol(p)<=h)
+            vaciarArbol(p);
+        else
+        {
+            podarRamasAlturaX(&(*p)->izq, h);
+            podarRamasAlturaX(&(*p)->der, h);
+        }
+    }
+    return 0;
+}
+
+void verNodoCompleto (t_arbol *p)
+{
+     printf("Legajo: %d | Apyn: %s | Cargo: %s | Nodo: %p //  Izq: %p | Der: %p \n",
+            (*p)->info.legajo, (*p)->info.apyn, (*p)->info.cargo, *p,(*p)->izq, (*p)->der);
+}

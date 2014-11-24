@@ -1,4 +1,5 @@
 #include "Racional.h"
+#define abs(x) ((x) < 0 ? -(x) : (x))
 
 Racional::Racional(int num, int den)
 {
@@ -21,4 +22,18 @@ Racional Racional::operator+ (const Racional &obj) const
 double Racional::valorReal()
 {
 	return double(num)/den;
+}
+
+int mcd (int a, int b)
+{
+	int c;
+	while (a!=b)
+	{
+		if (a>b)
+			a=a-b;
+		else
+			b=b-a;
+	}
+	c=a;
+	return c;
 }

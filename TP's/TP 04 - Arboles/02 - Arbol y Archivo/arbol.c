@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "arboles.h"
+#include "arbol.h"
 
 #define absoluto(x) ((x)<0? -(x):(x))
 
@@ -277,13 +277,14 @@ int vaciarArbolMostrarEnOrdenGrabarEnPreYContar(t_arbol *p)//, FILE *fp)
 //////////////////////////
 void verNodo(t_info *d)
 {
-    printf("Legajo: %d | Apyn: %s | Cargo: %s\n", (*d).legajo, (*d).apyn, (*d).cargo);
+    printf("Num Reg: %d | Clave: %s \n", (*d).nReg, (*d).clave);
+    //printf("Legajo: %d | Apyn: %s | Cargo: %s\n", (*d).legajo, (*d).apyn, (*d).cargo);
 }
 
 //////////////////////////
 int comparar(const t_info *d1,const t_info *d2)
 {
-    return ((*d1).legajo - (*d2).legajo);
+    return ((*d1).nReg - (*d2).nReg);
 }
 
 ////////////////////
@@ -468,6 +469,34 @@ int podarRamasAlturaX (t_arbol *p, int h)
 
 void verNodoCompleto (t_arbol *p)
 {
-     printf("Legajo: %d | Apyn: %s | Cargo: %s | Nodo: %p //  Izq: %p | Der: %p \n",
-            (*p)->info.legajo, (*p)->info.apyn, (*p)->info.cargo, *p,(*p)->izq, (*p)->der);
+    verNodo(&(*p)->info);
+     //printf("Legajo: %d | Apyn: %s | Cargo: %s | Nodo: %p //  Izq: %p | Der: %p \n",
+      //      (*p)->info.legajo, (*p)->info.apyn, (*p)->info.cargo, *p,(*p)->izq, (*p)->der);
+}
+
+/*FUNCIONES DEL EJERCICIO 2*/
+
+int buscarEnArbol (const t_arbol *p, t_info *d)
+{
+    if(*p) //while (*p)
+    {
+        int comp = comparar(d, &(*p)->info);
+        if(comp==0)
+        {
+            *d=(*p)->info;
+            return 1;
+        }
+        if(comp<0)
+            return buscarEnArbol(&(*p)->izq, d);     //p=&(*p)->izq;
+        else
+            return buscarEnArbol(&(*p)->der, d);     //p=&(*p)->der;
+    }
+    return 0;
+}
+
+int buscarEnArchivo(FILE *fp, t_reg *d, int nReg) //busca en archivo y devuelve la info del registro
+{
+    fseek(fp, nReg-1 * sizeof(t_reg), SEEK_SET);  //Si el primer registro es el numero 1 y no 0, va el nReg-1
+    fread(d, sizeof(t_reg), 1, fp);
+    return !feof(fp); //si se dio fin de archivo, es porque no pudo leer
 }

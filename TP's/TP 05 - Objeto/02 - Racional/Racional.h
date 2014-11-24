@@ -8,6 +8,8 @@ class Racional
 	int num,
 		den;
 
+	int mcd (int a, int b);
+	
 public:
 	Racional(int num=1, int den=1);
 	Racional operator+ (const Racional &obj) const

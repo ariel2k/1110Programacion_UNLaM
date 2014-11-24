@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1416769034 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\02 - arbol y archivo\arbol.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arbol.h"
+
+1416768559 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\02 - arbol y archivo\arbol.h
+
+1416769019 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\02 - arbol y archivo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arbol.h"
+

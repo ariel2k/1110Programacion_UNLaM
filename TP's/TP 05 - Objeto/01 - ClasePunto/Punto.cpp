@@ -86,8 +86,8 @@ Punto& Punto::operator++ ()  //pre-incremento
 Punto  Punto::operator++ (int) //pos-incremento
 {
     Punto aux(*this);
-    esValidoX(coordX+1);
-    esValidoY(coordY+1);
+    coordX = esValidoX(coordX+1);
+    coordY = esValidoY(coordY+1);
     return aux;
 }
 

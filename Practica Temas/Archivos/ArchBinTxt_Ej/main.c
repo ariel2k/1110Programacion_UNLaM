@@ -9,11 +9,11 @@ int main()
 		 *fpATexto;
 
 	// programa
-	crearBinario(nomBin);
+	//crearBinario(nomBin);
 	crearText(nomText);
 
-	if(abrirArchivo(&fpABinario, nomBin, "rb", CON_MSJ))
-		llenarBinario(&fpABinario);
+	//if(abrirArchivo(&fpABinario, nomBin, "rb", CON_MSJ))
+		//llenarBinario(&fpABinario);
 
 	if(abrirArchivo(&fpATexto, nomText, "rt", CON_MSJ))
 		llenarText(fpATexto);
@@ -25,6 +25,6 @@ int main()
 	fclose(fpABinario);
 	fclose(fpATexto);
 	system("pause");
-	return 0;    
+	return 0;
     return 0;
 }

@@ -452,29 +452,3 @@ void verNodoCompleto (t_arbol *p)
             (*p)->info.legajo, (*p)->info.apyn, (*p)->info.cargo, *p,(*p)->izq, (*p)->der);
 }
 
-/*FUNCIONES DEL EJERCICIO 2*/
-
-int buscarEnArbol (const t_arbol *p, t_info *d)
-{
-    if(*p) //while (*p)
-    {
-        int comp = compara(d, &(*p)->info);
-        if(comp==0)
-        {
-            *d=(*p)->info;
-            return 1;
-        }
-        if(cmp<0)
-            return buscarEnArbol(&(*p)->izq, d);     //p=&(*p)->izq;
-        else
-            return buscarEnArbol(&(*p)->der, d);     //p=&(*p)->der;
-    }
-    return 0;
-}
-
-int buscarEnArchivo(FILE *fp, t_reg *d, int nReg) //busca en archivo y devuelve la info del registro
-{
-    fseek(fp, nReg-1 * sizeof(t_reg), SEEK_SET);  //Si el primer registro es el numero 1 y no 0, va el nReg-1
-    fread(d, sizeof(t_reg), 1, fp);
-    return !feof(fp); //si se dio fin de archivo, es porque no pudo leer
-} 

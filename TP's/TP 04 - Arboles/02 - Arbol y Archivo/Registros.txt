@@ -1,11 +1,11 @@
-500,"Ariel","Jefe"
-250,"Fede","Gerente"
-100,"Nico","Lider"
-20,"Mati","Jr."
-10,"Ivan","Op."
-300,"Lucas","Lider"
-290,"Mica","Jr."
-750,"Gaby","Gerente"
-600,"Augusto","Lider"
-560,"Rocio","Jr."
-800,"Cami","Lider"
+500, Ariel, Jefe
+250, Fede, Gerente
+100, Nico, Lider
+20, Mati, Jr.
+10, Ivan, Op.
+300, Lucas, Lider
+290, Mica, Jr.
+750, Gaby, Gerente
+600, Augusto, Lider
+560, Rocio, Jr.
+800, Cami, Lider

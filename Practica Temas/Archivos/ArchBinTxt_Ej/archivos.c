@@ -34,7 +34,7 @@ void llenarBinario (FILE **fp)
 		gets(aux.apyn);
 		printf("\nSEXO: ");
 		sscanf("%c", aux.sex);
-		fwrite(aux, sizeof(aux), 1, fp);
+		//fwrite(aux, sizeof(aux), 1, fp);
 		printf("\n//--DATOS--//\n");
 		printf("DNI: ");
 		scanf("%ld", dni);

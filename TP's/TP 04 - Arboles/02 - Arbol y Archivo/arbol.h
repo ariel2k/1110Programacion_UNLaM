@@ -17,12 +17,19 @@
 
 //PREODEN: NID  /  POSORDEN: IDN  /  ENORDEN: IND
 
+
+typedef struct
+{
+    int  nReg;
+    char clave[2];
+}t_info;
+
 typedef struct
 {
     int  legajo;
     char apyn[35],
          cargo[15];
-}t_info;
+}t_reg;
 
 typedef struct s_nodo
 {

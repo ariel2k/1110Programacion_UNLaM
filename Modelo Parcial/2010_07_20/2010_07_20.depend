@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1417043112 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\modelo parcial\2010_07_20\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arbol.h"
+
+1417042326 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\modelo parcial\2010_07_20\arbol.h
+	<stdio.h>
+	<stdlib.h>
+
+1417042321 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\modelo parcial\2010_07_20\arbol.c
+	"arbol.h"
+

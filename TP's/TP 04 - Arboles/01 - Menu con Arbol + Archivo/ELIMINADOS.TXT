@@ -1,0 +1,17 @@
+
+Legajo: 100 | Apyn: Nico | Cargo: Lider | Nodo: 002D1158 //  Izq: 00000000 | Der: 00000000 
+Legajo: 20 | Apyn: Mati | Cargo: Jr. | Nodo: 002D11A0 //  Izq: 00000000 | Der: 00000000 
+Legajo: 10 | Apyn: Ivan | Cargo: Op. | Nodo: 002D11E8 //  Izq: 00000000 | Der: 00000000 
+Legajo: 300 | Apyn: Lucas | Cargo: Lider | Nodo: 002D1230 //  Izq: 00000000 | Der: 00000000 
+Legajo: 290 | Apyn: Mica | Cargo: Jr. | Nodo: 002D1278 //  Izq: 00000000 | Der: 00000000 
+Legajo: 750 | Apyn: Gaby | Cargo: Gerente | Nodo: 002D12C0 //  Izq: 00000000 | Der: 00000000 
+Legajo: 600 | Apyn: Augusto | Cargo: Lider | Nodo: 002D1308 //  Izq: 00000000 | Der: 00000000 
+Legajo: 560 | Apyn: Rocio | Cargo: Jr. | Nodo: 002D1350 //  Izq: 00000000 | Der: 00000000 
+Legajo: 800 | Apyn: Cami | Cargo: Lider | Nodo: 002D1398 //  Izq: 00000000 | Der: 00000000 
+Legajo: 20 | Apyn: Mati | Cargo: Jr. | Nodo: 003011A0 //  Izq: 00000000 | Der: 00000000 
+Legajo: 10 | Apyn: Ivan | Cargo: Op. | Nodo: 003011E8 //  Izq: 00000000 | Der: 00000000 
+Legajo: 300 | Apyn: Lucas | Cargo: Lider | Nodo: 00301230 //  Izq: 00000000 | Der: 00000000 
+Legajo: 290 | Apyn: Mica | Cargo: Jr. | Nodo: 00301278 //  Izq: 00000000 | Der: 00000000 
+Legajo: 600 | Apyn: Augusto | Cargo: Lider | Nodo: 00301308 //  Izq: 00000000 | Der: 00000000 
+Legajo: 560 | Apyn: Rocio | Cargo: Jr. | Nodo: 00301350 //  Izq: 00000000 | Der: 00000000 
+Legajo: 800 | Apyn: Cami | Cargo: Lider | Nodo: 00301398 //  Izq: 00000000 | Der: 00000000 

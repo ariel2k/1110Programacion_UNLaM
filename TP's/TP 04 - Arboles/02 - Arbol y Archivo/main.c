@@ -1,20 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "arbol.h"
+#include "archivos.h"
 
 void llenarArbolAutomatico (t_arbol *p);
 void agregarRegistro(t_arbol *p, FILE *pf);
-int compararDupi (int nReg, t_arbol *p);
+//int compararDupi (int nReg, t_arbol *p);
+int buscarClave(t_arbol *p, FILE *pfArch);
+void verNodoReg (t_reg *p);
 
 int main()
 {
     int op;
     t_arbol arbol;
-    FILE *pf = fopen("Registros.txt","rt");
-    if(pf==NULL)
-    {
-        printf("ERROR ABRIENDO ARCHIVO.\n");
-    }
+    FILE *fpSal = fopen(nombreTexto, "wt");
+    if (abrirArchivo(&fpSal, nombreTexto, "rt", CON_MSJ)) //Si puede abrir archivo, que lo muestre
+       // mostrarArchivoTexto(fpSal);
     llenarArbolAutomatico (&arbol);
     do{
       printf("-------Menu-------\n"
@@ -28,9 +29,12 @@ int main()
          "Opcion: ");
       scanf("%d",&op);
       switch(op){
-        case 1:
-          agregarRegistro(&arbol, pf);
-          break;
+       // case 1:
+       //   agregarRegistro(&arbol, pf);
+       //   break;
+        case 2:
+            printf("=================Buscar Clave=================\n");
+            buscarClave(&arbol, fpSal);
         case 0:
           printf("\n\n\n\n\n\n\n\n"
                  "            =================Programa finalizado=================\n"
@@ -52,7 +56,7 @@ int main()
       }
   }while(op!=0);
 
-  fclose(pf);
+  fclose(fpSal);
   return 0;
 }
 
@@ -80,7 +84,7 @@ void llenarArbolAutomatico (t_arbol *p)
         i++;
     }
 }
-
+ /*
 void agregarRegistro(t_arbol *p, FILE *pf)
 {
   t_reg aux;
@@ -106,7 +110,9 @@ void agregarRegistro(t_arbol *p, FILE *pf)
   else
     printf("CLAVE DUPLICADA");
 }
+*/
 
+/*
 int compararDupi (int nReg, t_arbol *p)
 {
     if(*p) //while (*p)
@@ -121,15 +127,22 @@ int compararDupi (int nReg, t_arbol *p)
     }
     return 0;
 }
+*/
 
-/*int buscarClave()
+int buscarClave(t_arbol *p, FILE *fpArch)
 {
+  t_info info;
+  t_reg  reg;
+  printf("ingrese clave a buscar: ");
+  fflush(stdin);
   scanf("%s",info.clave);
-  if(buscarEnArbol(&arbol, &info))
+  if(buscarEnArbol(p, &info))
   {
     if(buscarEnArchivo(fpArch, &reg, info.nReg))
-      mostrar(&reg);
+    {
+      verNodoReg(&reg);
       return 1;
+    }
     else
       printf("No se encontro en el archivo.\n");
   }
@@ -138,4 +151,9 @@ int compararDupi (int nReg, t_arbol *p)
 
   return 0;
 }
-*/
+
+void verNodoReg (t_reg *p)
+{
+    printf("Legajo: %d | Apyn: %s | Cargo: %s  \n",
+          (*p).legajo, (*p).apyn, (*p).cargo);
+}

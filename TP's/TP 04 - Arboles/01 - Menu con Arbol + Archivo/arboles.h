@@ -6,30 +6,19 @@
 #define TODO_BIEN 1
 
 //ARBOL BINARIO --> si existe, tendria un nodo "raiz" que puede tener subarboles (si es < a la izq, si es > a la der)
-
 //ARBOL BINARIO DE BUSQUEDA --> arbol binario que no puede tener claves duplicadas
-
 //ARBOL COMPLETO --> (2^N) -1 = cantidad de nodos  (N=altura)
-
 //ARBOL BALANCEADO --> cuando el nivel anterior al maximo es completo
-
 //ARBOL AVL --> cuando la diferencia entre la altura de la rama izq y der es a lo sumo uno (en cada nodo)
-
 //PREODEN: NID  /  POSORDEN: IDN  /  ENORDEN: IND
 
-
-typedef struct
-{
-    int  nReg;
-    char clave[2];
-}t_info;
 
 typedef struct
 {
     int  legajo;
     char apyn[35],
          cargo[15];
-}t_reg;
+}t_info;
 
 typedef struct s_nodo
 {
@@ -74,8 +63,7 @@ int eliminarArbol(t_arbol *p);
 int podarRamasAlturaX(t_arbol *p, int h);
 void verNodoCompleto (t_arbol *p);
 
-/* Extras ejercicio 02*/
-int buscarEnArbol (const t_arbol *p, t_info *d);
+/* Extras ejercicio 02 */
 
 
 #endif // ARBOLES_H_INCLUDED

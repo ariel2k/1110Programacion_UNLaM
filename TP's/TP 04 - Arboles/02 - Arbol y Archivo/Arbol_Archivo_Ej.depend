@@ -1,14 +1,22 @@
 # depslib dependency file v1.0
-1416769034 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\02 - arbol y archivo\arbol.c
+1416863457 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\02 - arbol y archivo\arbol.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"arbol.h"
 
-1416768559 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\02 - arbol y archivo\arbol.h
+1416863458 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\02 - arbol y archivo\arbol.h
 
-1416769019 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\02 - arbol y archivo\main.c
+1416864767 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\02 - arbol y archivo\main.c
 	<stdio.h>
 	<stdlib.h>
+	"arbol.h"
+	"archivos.h"
+
+1416864730 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\02 - arbol y archivo\archivos.c
+	"archivos.h"
+
+1416864689 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\02 - arbol y archivo\archivos.h
+	<stdio.h>
 	"arbol.h"
 

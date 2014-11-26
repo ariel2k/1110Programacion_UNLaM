@@ -9,12 +9,14 @@ class Racional
 		den;
 
 	int mcd (int a, int b);
-	
+
 public:
 	Racional(int num=1, int den=1);
-	Racional operator+ (const Racional &obj) const
+	Racional operator+ (const Racional &obj) const;
 
-	double valorReal(); 
+	double valorReal();
+
+	friend ostream& operator<< (ostream &sal, const Racional &obj);
 };
 
 #endif // RACIONAL_H_INCLUDED

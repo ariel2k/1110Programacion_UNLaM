@@ -23,6 +23,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="arbol.h" />
+		<Unit filename="archivos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="archivos.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

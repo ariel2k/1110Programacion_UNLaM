@@ -15,7 +15,7 @@ Racional::Racional(int num, int den)
 
 Racional Racional::operator+ (const Racional &obj) const
 {
-	return Racional(num*obj.den + obj.num*den , den*obj.den); 
+	return Racional(num*obj.den + obj.num*den , den*obj.den);
 	//Como llama al constructor parametrizado lo devuelve simplificado
 }
 
@@ -24,7 +24,13 @@ double Racional::valorReal()
 	return double(num)/den;
 }
 
-int mcd (int a, int b)
+ostream& operator<< (ostream &sal, const Racional &obj)
+{
+    sal << obj.num << "/" << obj.den << endl;
+    return sal;
+}
+
+int Racional::mcd (int a, int b)
 {
 	int c;
 	while (a!=b)

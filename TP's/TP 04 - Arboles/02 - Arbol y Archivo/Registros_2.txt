@@ -1,0 +1,11 @@
+500,Jefe
+250,Gerente
+100,Lider
+20,Jr.
+10,Op.
+300,Lider
+290,Jr.
+750,Gerente
+600,Lider
+560,Jr.
+800,Lider

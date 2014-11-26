@@ -11,8 +11,6 @@ class PersonaDos
 	char *apyn;
 	char sex;
 
-
-
     public:
 		PersonaDos();
 		//virtual ~PersonaDos();

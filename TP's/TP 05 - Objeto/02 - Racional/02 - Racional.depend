@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1416858232 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 05 - objeto\02 - racional\main.cpp
+	<iostream>
+	"racional.h"
+
+1416858413 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 05 - objeto\02 - racional\racional.cpp
+	"Racional.h"
+
+1416858380 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 05 - objeto\02 - racional\racional.h
+	<iostream>
+

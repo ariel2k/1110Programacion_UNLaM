@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "arbol.h"
+#include "arboles.h"
 
 #define absoluto(x) ((x)<0? -(x):(x))
 
-//////////////////////////
+
 void crearArbol(t_arbol *p)
 {
     *p= NULL;
 }
 
-///////////////////////////
+
 void enOrden( const t_arbol *p)
 {
     if(*p)
@@ -22,7 +22,7 @@ void enOrden( const t_arbol *p)
     }
 }
 
-////////////////////////////////
+
 void preOrden( const t_arbol *p)
 {
     if(*p)
@@ -33,7 +33,6 @@ void preOrden( const t_arbol *p)
     }
 }
 
-///////////////////////////////
 void posOrden( const t_arbol *p)
 {
     if(*p)
@@ -44,7 +43,6 @@ void posOrden( const t_arbol *p)
     }
 }
 
-///////////////////////////////
 int ponerEnArbol(t_arbol *p, const t_info *d)
 {
     int cmp;
@@ -92,7 +90,6 @@ int ponerEnArbolR(t_arbol *p, const t_info *d)
     return TODO_BIEN;
 }
 
-///////////////////////////////
 int alturaArbol(const t_arbol *p)
 {
     if(*p)
@@ -105,7 +102,6 @@ int alturaArbol(const t_arbol *p)
     return 0;
 }
 
-//////////////////////////////
 int contarNodosArbol(const t_arbol *p)
 {
     if(*p)
@@ -113,7 +109,6 @@ int contarNodosArbol(const t_arbol *p)
     return 0;
 }
 
-//////////////////////////////
 int esCompleto(const t_arbol *p)
 {
     int h= alturaArbol(p),
@@ -122,7 +117,6 @@ int esCompleto(const t_arbol *p)
     return dosAlaH(h)-1 == c;
 }
 
-/////////////////////////////
 int dosAlaH (int h)
 {
     int acum=1;
@@ -142,7 +136,6 @@ int esArbolCompleto(const t_arbol *p)
     return verSiEsCompleto(p,h);
 }
 
-////////////////////////////
 int verSiEsCompleto(const t_arbol *p, int h) /**/
 {
     if(*p)
@@ -151,7 +144,6 @@ int verSiEsCompleto(const t_arbol *p, int h) /**/
     return h==0;
 }
 
-////////////////////////////
 int esBalanceado(const t_arbol *p)
 {
     int h= alturaArbol(p),
@@ -160,7 +152,6 @@ int esBalanceado(const t_arbol *p)
     return dosAlaH(h-1)-1 == c;
 }
 
-///////////////////////////
 int contarNodosHastaHmenos1(const t_arbol *p, int h)
 {
     if(*p && h>1)
@@ -177,7 +168,6 @@ int esArbolBalanceado(const t_arbol *p)
     return verSiEsBalanceado(p,h);
 }
 
-////////////////////////////
 int verSiEsBalanceado(const t_arbol *p, int h)
 {
     if(*p)
@@ -186,7 +176,6 @@ int verSiEsBalanceado(const t_arbol *p, int h)
     return h<=1; // <-- h<=2 ^^Es balanceado cuando tiene hojas en su último nivel o nivel anterior^^
 }
 
-////////////////////////////
 int esArbolAVL( const t_arbol *p)
 {
     if(*p)
@@ -201,7 +190,6 @@ int esArbolAVL( const t_arbol *p)
     return 1;
 }
 
-////////////////////////////
 int contarHojas(const t_arbol *p)
 {
     if(*p)
@@ -213,7 +201,6 @@ int contarHojas(const t_arbol *p)
     return 0;
 }
 
-////////////////////////////
 int contarNodosInternos(const t_arbol *p)
 {
     if(*p)
@@ -222,7 +209,6 @@ int contarNodosInternos(const t_arbol *p)
     return 0;
 }
 
-////////////////////////////
 int contarNodosRamaIzquierda(const t_arbol *p)
 {
     if(*p)
@@ -231,19 +217,20 @@ int contarNodosRamaIzquierda(const t_arbol *p)
     return 0;
 }
 
-////////////////////////////
 void vaciarArbol(t_arbol *p)
 {
+    FILE *fp = fopen("ELIMINADOS.TXT","a+");
     if(*p)
     {
         vaciarArbol(&(*p)->izq);
         vaciarArbol(&(*p)->der);
+        fprintf(fp,"Legajo: %d | Apyn: %s | Cargo: %s | Nodo: %p //  Izq: %p | Der: %p \n",
+            (*p)->info.legajo, (*p)->info.apyn, (*p)->info.cargo, *p,(*p)->izq, (*p)->der);
         free(*p);
         *p=NULL;
     }
 }
 
-////////////////////////////
 int vaciarArbolYContar(t_arbol *p)
 {
     if(*p)
@@ -257,7 +244,6 @@ int vaciarArbolYContar(t_arbol *p)
     return 0;
 }
 
-///////////////////////////
 int vaciarArbolMostrarEnOrdenGrabarEnPreYContar(t_arbol *p)//, FILE *fp)
 {
     int cant;
@@ -274,20 +260,16 @@ int vaciarArbolMostrarEnOrdenGrabarEnPreYContar(t_arbol *p)//, FILE *fp)
     return 0;
 }
 
-//////////////////////////
 void verNodo(t_info *d)
 {
-    printf("Num Reg: %d | Clave: %s \n", (*d).nReg, (*d).clave);
-    //printf("Legajo: %d | Apyn: %s | Cargo: %s\n", (*d).legajo, (*d).apyn, (*d).cargo);
+    printf("Legajo: %d | Apyn: %s | Cargo: %s\n", (*d).legajo, (*d).apyn, (*d).cargo);
 }
 
-//////////////////////////
 int comparar(const t_info *d1,const t_info *d2)
 {
-    return (*d1.nReg - *d2.nReg);
+    return ((*d1).legajo - (*d2).legajo);
 }
 
-////////////////////
 /**FUNCION MATI**/
 /*
 int contIzquierda(t_arbol *p)
@@ -469,27 +451,7 @@ int podarRamasAlturaX (t_arbol *p, int h)
 
 void verNodoCompleto (t_arbol *p)
 {
-    verNodo(&(*p)->info);
-     //printf("Legajo: %d | Apyn: %s | Cargo: %s | Nodo: %p //  Izq: %p | Der: %p \n",
-      //      (*p)->info.legajo, (*p)->info.apyn, (*p)->info.cargo, *p,(*p)->izq, (*p)->der);
+     printf("Legajo: %d | Apyn: %s | Cargo: %s | Nodo: %p //  Izq: %p | Der: %p \n",
+            (*p)->info.legajo, (*p)->info.apyn, (*p)->info.cargo, *p,(*p)->izq, (*p)->der);
 }
 
-/*FUNCIONES DEL EJERCICIO 2*/
-
-int buscarEnArbol (const t_arbol *p, t_info *d)
-{
-    if(*p) //while (*p)
-    {
-        int comp = comparar(d, &(*p)->info);
-        if(comp==0)
-        {
-            *d=(*p)->info;
-            return 1;
-        }
-        if(comp<0)
-            return buscarEnArbol(&(*p)->izq, d);     //p=&(*p)->izq;
-        else
-            return buscarEnArbol(&(*p)->der, d);     //p=&(*p)->der;
-    }
-    return 0;
-}

@@ -25,8 +25,8 @@ int main ()
 		 *fpTxt;
 
 
-	//crearArchivoBinario(nombreBinario);
-	//crearArchivoTexto(nombreTexto);
+	crearArchivoBinario(nombreBinario);
+	crearArchivoTexto(nombreTexto);
 
 
 	if (abrirArchivo(&fpBin, nombreBinario, "rb", CON_MSJ)) //Si puede abrir archivo, que lo muestre
@@ -68,8 +68,8 @@ void crearArchivoTexto ()
 	FILE *fp = fopen(nombreTexto, "wt");
 	int i=0;
 	t_pers registros[]={
-		{8838213, "Sa, Lia", 'F'},
-		{9921394, "Lo, Pepe", 'M'}};
+		{8838213, "Pp, Lia", 'F'},
+		{9921394, "OO, Pepe", 'M'}};
 
 	for(i=0; i<2 ; i++)
 	{

@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1416857511 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\practica temas\archivos\archivos_ej\archivos.c
+	"archivos.h"
+
+1416857947 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\practica temas\archivos\archivos_ej\archivos.h
+	<stdio.h>
+
+1416857945 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\practica temas\archivos\archivos_ej\main.c
+	<stdio.h>
+	<stdlib.h>
+	"archivos.h"
+

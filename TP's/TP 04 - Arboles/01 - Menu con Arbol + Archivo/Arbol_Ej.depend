@@ -12,7 +12,7 @@
 	<stdlib.h>
 	"arboles.h"
 
-1416767233 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\01 - menu con arbol\arboles.c
+1416668532 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\01 - menu con arbol\arboles.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -21,6 +21,19 @@
 1416767220 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\01 - menu con arbol\arboles.h
 
 1416667136 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\01 - menu con arbol\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arboles.h"
+
+1416865861 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\01 - menu con arbol + archivo\arboles.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arboles.h"
+
+1416767220 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\01 - menu con arbol + archivo\arboles.h
+
+1416865624 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\tp's\tp 04 - arboles\01 - menu con arbol + archivo\main.c
 	<stdio.h>
 	<stdlib.h>
 	"arboles.h"

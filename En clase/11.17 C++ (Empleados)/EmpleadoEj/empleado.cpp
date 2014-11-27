@@ -74,7 +74,7 @@ istream& operator>> (istream &ent, PersonaDos &obj)
 	char aux[500];
 	cout << "APyN: ";
 	ent.ignore(1000, '\n');
-	ent.getline(aux, sizeof(aux), '\n');// .getline(aux, sizeof(aux), "\n");
+	ent.getline(aux, sizeof(aux), '\n');
 	//ent.ignore(1000, '\n');
 	delete []obj.apyn;
 	obj.apyn = duplicarCadena(aux);

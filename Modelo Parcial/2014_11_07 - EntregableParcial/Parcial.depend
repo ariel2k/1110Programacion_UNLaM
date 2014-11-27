@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1417101118 source:d:\mis documentos\desktop\com-01parcial 2\entregableparcial\main.c
+	"main.h"
+	"string.h"
+
+1416875792 d:\mis documentos\desktop\com-01parcial 2\entregableparcial\main.h
+	<stdio.h>
+	"colacirc.h"
+	"arbol.h"
+	"funciones.h"
+
+1417010582 d:\mis documentos\desktop\com-01parcial 2\entregableparcial\colacirc.h
+	<stdlib.h>
+	<stdio.h>
+
+1417012574 d:\mis documentos\desktop\com-01parcial 2\entregableparcial\arbol.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1416948052 d:\mis documentos\desktop\com-01parcial 2\entregableparcial\funciones.h
+	<stdio.h>
+	<string.h>
+	"main.h"
+	"colacirc.h"
+	"arbol.h"
+

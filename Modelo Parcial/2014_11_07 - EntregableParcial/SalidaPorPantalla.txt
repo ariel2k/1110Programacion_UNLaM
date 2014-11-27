@@ -1,0 +1,113 @@
+Informacion cargada en la cola:
+Clave Prod CantPed
+MAZA1000gr      11
+DESTOR15cm      10
+MARTINETE1    2375
+DESTOR15cm       9
+DESTOR15cm       7
+MAZA0750gr       6
+CABL0.50mm     200
+CABL0.75mm    1500
+MARTINETE2     900
+TORNI005mm     200
+CABL0.50mm     500
+CABL0.75mm    3000
+CABL0.50mm     300
+CLAVO2Pulg     700
+MARTINETE1    1935
+TORNI005mm     700
+TORNI005mm     500
+TORNI005mm     300
+PUNZONADOR       7
+TORNI009mm     300
+CABL2.25mm     600
+CLAVO2Pulg     510
+CABL0.75mm    6000
+CABL2.25mm     800
+CLAVO2Pulg     780
+TORNI005mm     750
+
+El archivo contiene los siguientes productos:
+Clave Prod Descripcion del Producto                   Existen Fecha Ingr  Precio Pto Rep
+DESTOR15cm Destornillador chino 15 cm                      28 22/042013   29.99     5
+CABL2.25mm Cable Sellado IRAM de 2 1/4 mm                5000 12/112014   12.99   200
+CABL0.75mm Cable Sellado IRAM de 3/4 mm                  5000 23/042013    5.59   100
+CABL0.25mm Cable Taiwan sin norma de 0.25 mm             5000 20/072012    1.55   100
+CABL0.50mm Cable Taiwan sin norma de 0.5 mm              5000 27/062014    3.10   100
+CABL1.00mm Cable Sellado IRAM de 1 mm                    5000 11/122013    7.50   200
+CLAVO2Pulg Clavo de 2 pulgadas galvanizado obra          2000 11/052013   35.50    20
+CLAVO3Pulg Clavo de 3 pulgadas galvanizado obra          2000 11/052014   31.75    20
+CLAVO1Pulg Clavo de 1 pulgada carpintero                 2000 22/042014   40.25    20
+MAZA1500gr Maza China de 1,5 Kg buena                      20 22/042014   49.99     4
+TORNI005mm Tornillo mecha Germany de 5 mm                7000 22/042012   44.25   500
+TORNI009mm Tornillo mecha Chino de 9 mm galvanizado      7000 27/062013   39.50   500
+TORNI007mm Tornillo mecha Ind Arg Gauchito de 7 mm       7000 11/052013   40.25   500
+MAZA3000gr Maza B&D de 3 Kg reforzada                      20 11/052013   99.99     5
+TORNI003mm Tornillo prisionero sin cabeza de 3 mm        7000 20/062013   57.99   500
+DESTOR25cm Destornillador de Impacto Ind. Arg. 25 cm       28 20/062010  120.60     3
+MAZA0750gr Maza B&D de 3/4 Kg estandar                     20 20/062014   52.50     3
+MAZA1000gr Maza Ind. Nacional de 1 Kg reforzada            20 20/062013   51.00     4
+DESTOR20cm Destornillador de B&D reforzado 20 cm           28 11/052014   52.90     5
+
+La informacion del arbol en preorden es:
+Clave Prod Nro Reg
+DESTOR15cm       1
+CABL2.25mm       2
+CABL0.75mm       3
+CABL0.25mm       4
+CABL0.50mm       5
+CABL1.00mm       6
+CLAVO2Pulg       7
+CLAVO1Pulg       9
+CLAVO3Pulg       8
+MAZA1500gr      10
+DESTOR25cm      16
+DESTOR20cm      19
+MAZA0750gr      17
+MAZA1000gr      18
+TORNI005mm      11
+MAZA3000gr      14
+TORNI003mm      15
+TORNI009mm      12
+TORNI007mm      13
+
+Informe de No Encontrados:
+ERROR - La clave "MARTINETE1" no se encuentra en el archivo
+ERROR - La clave "MARTINETE2" no se encuentra en el archivo
+ERROR - La clave "MARTINETE1" no se encuentra en el archivo
+ERROR - La clave "PUNZONADOR" no se encuentra en el archivo
+Total de pedidos con claves no encontradas: 4
+
+Total de Claves erroneas y correctas :Se encontraron:   4 claves erroneas
+             y   22 claves correctas.
+Informe de Faltantes y a reponer:
+A reponer: DESTOR15cm     2     5
+Faltante:  CABL0.75mm  -5500
+A reponer: CLAVO2Pulg    10    20
+Hay     1 productos faltantes,
+  y     2 productos por debajo del punto de reposicion
+
+El archivo contiene los siguientes productos:
+Clave Prod Descripcion del Producto                   Existen Fecha Ingr  Precio Pto Rep
+DESTOR15cm Destornillador chino 15 cm                       2 22/042013   29.99     5
+CABL2.25mm Cable Sellado IRAM de 2 1/4 mm                3600 12/112014   12.99   200
+CABL0.75mm Cable Sellado IRAM de 3/4 mm                 -5500 23/042013    5.59   100
+CABL0.25mm Cable Taiwan sin norma de 0.25 mm             5000 20/072012    1.55   100
+CABL0.50mm Cable Taiwan sin norma de 0.5 mm              4000 27/062014    3.10   100
+CABL1.00mm Cable Sellado IRAM de 1 mm                    5000 11/122013    7.50   200
+CLAVO2Pulg Clavo de 2 pulgadas galvanizado obra            10 11/052013   35.50    20
+CLAVO3Pulg Clavo de 3 pulgadas galvanizado obra          2000 11/052014   31.75    20
+CLAVO1Pulg Clavo de 1 pulgada carpintero                 2000 22/042014   40.25    20
+MAZA1500gr Maza China de 1,5 Kg buena                      20 22/042014   49.99     4
+TORNI005mm Tornillo mecha Germany de 5 mm                4550 22/042012   44.25   500
+TORNI009mm Tornillo mecha Chino de 9 mm galvanizado      6700 27/062013   39.50   500
+TORNI007mm Tornillo mecha Ind Arg Gauchito de 7 mm       7000 11/052013   40.25   500
+MAZA3000gr Maza B&D de 3 Kg reforzada                      20 11/052013   99.99     5
+TORNI003mm Tornillo prisionero sin cabeza de 3 mm        7000 20/062013   57.99   500
+DESTOR25cm Destornillador de Impacto Ind. Arg. 25 cm       28 20/062010  120.60     3
+MAZA0750gr Maza B&D de 3/4 Kg estandar                     14 20/062014   52.50     3
+MAZA1000gr Maza Ind. Nacional de 1 Kg reforzada             9 20/062013   51.00     4
+DESTOR20cm Destornillador de B&D reforzado 20 cm           28 11/052014   52.90     5
+
+Process returned 0 (0x0)   execution time : 0.219 s
+Press any key to continue.

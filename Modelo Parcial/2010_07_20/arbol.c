@@ -12,7 +12,8 @@ void enOrden(const t_arbol *p, FILE *pf)
 	{
 		enOrden(&(*p)->izq, pf);
 		verNodo(p);
-		//guardar(&(*p)->info, pf);
+        fprintf(pf,"Nro cuenta: %d | Nro Registro: %04d // Nodo: %p\n",
+           (*p)->info.nro_cta, (*p)->info.nro_reg, *p);
 		enOrden(&(*p)->der, pf);
 	}
 }
@@ -94,17 +95,12 @@ int actualizarEstado(FILE *pf, t_reg d)
 {
     d.saldo = 100;
     d.estado = 'B';
-    printf("%d | %-14s | %02d/%02d/%04d | %02d/%02d/%04d | %-6.1f | %c \n",
-               d.nro_cta,
-               d.nombre_titular,
-               d.fch_alta.di, d.fch_alta.me, d.fch_alta.an,
-               d.fch_ult_mov.di, d.fch_ult_mov.me, d.fch_ult_mov.an,
-               d.saldo,
-               d.estado);
+
     if(!feof(pf))
     {
         fseek(pf,-(sizeof(t_reg)),SEEK_CUR);
         fwrite(&d,sizeof(t_reg),1,pf);
+        fseek(pf,0,SEEK_CUR);
         return 1;
     }
     return 0;

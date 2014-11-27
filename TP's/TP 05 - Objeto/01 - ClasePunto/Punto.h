@@ -23,9 +23,9 @@ public:
 	Punto operator+ (const Punto &obj) const; 				//p1+p2  	(1)
 	Punto operator- (const Punto &obj) const; 				//p1+p2  	(1)
 	
-	&Punto operator++ (); 	//pre-incremento
+	Punto& operator++ (); 	 //pre-incremento
 	Punto  operator++ (int); //pos-incremento
-	Punto& operator-- (); 	//pre-decremento
+	Punto& operator-- (); 	 //pre-decremento
 	Punto  operator-- (int); //pos-decremento
 
 	Punto operator+= (const Punto &obj);

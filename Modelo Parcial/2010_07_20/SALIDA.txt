@@ -1,0 +1,3 @@
+Nro cuenta: 300 | Nro Registro: 0003 // Nodo: 002E10C8
+Nro cuenta: 400 | Nro Registro: 0004 // Nodo: 002E10E0
+Nro cuenta: 500 | Nro Registro: 0005 // Nodo: 002E10F8

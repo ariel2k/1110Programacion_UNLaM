@@ -39,3 +39,46 @@ int listaLlena (const t_lista *p)
 	free(aux);
 	return aux == NULL;
 }
+
+
+/* Eliminar nodos de X clave */
+//La lista no esta ordenada por la clave que queres eliminar
+int eliminarClave_desordenado(t_lista *p, const t_info *d) 
+{
+	t_nodo *aux;
+	int cant=0;
+	
+	while(*p)
+	{
+		if(comparar(&(*p)->info, d) == 0)
+		{
+			aux = *p;
+			*p = aux->sig;
+			free(aux);
+			n++;
+		}
+		else
+			p=&(*p)->sig;
+	}
+
+	return n;
+}
+
+int eliminarClave_ordenado(t_lista *p, const t_info *d) 
+{
+	t_nodo *aux;
+	int cant=0;
+
+	while(*p && comparar(d, &(*p)->si) > 0)
+		p=&(*p)->sig;
+
+	while(*p && comparar(d, &(*p)->si)==0)
+	{
+		aux = *p;
+		*p = aux->sig;
+		free(aux);
+		n++;
+	}
+
+	return n;
+}

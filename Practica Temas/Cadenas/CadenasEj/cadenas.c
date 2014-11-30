@@ -109,3 +109,222 @@ int aEntero(const char *cad)
 	return signo=='-' ? -acum : acum;
 }
 
+/*char *aCaracter(char *s, int n, int base)
+{
+	char *ini,
+		 *fin,
+		 aux;
+	unsigned num,
+			 resto;
+	static char digito[]={"0123456789ABCDEFGHIJKLMÑNOPQRSTUVWXYZ"};
+
+	if(n<0 && base==10)
+	{
+		num = -n;
+		*s ='-';
+		fin = s++;
+	}
+	else
+	{
+		num=(unsigned)n;
+		fin = s;
+	}
+	ini=fin;
+	do{
+		resto = num%base;
+		num /= base;
+		*fin = digito[resto];
+	}while(num);
+
+	*fin='\0';
+	fin--;
+
+	while(ini<fin)
+	{
+		aux = *ini;
+		*ini = *fin;
+		*fin = aux;
+		ini++;
+		fin--;
+	}
+
+	return
+}*/
+
+
+/* Ej parcial */
+char *decodificar (char *cad)
+{
+	char *orig = cad,
+		 *dest = cad;
+	while(*orig)
+	{
+		while(*orig < '1' || *orig > '9')
+			*dest++=*orig++;
+
+		if(*orig >= '2' && *orig <= '9')
+		{
+			int cant = *orig - '0'; //obtengo el valor numerico
+			invertir(orig, cant);
+			decrementar(orig, cant);
+			//mover(dest, orig, cant);
+			copiarCadena(dest, orig);
+			dest += cant;
+			orig += cant;
+		}
+	}
+	*dest = '\0';
+	return cad;
+}
+
+void invertir (char *s, int n)
+{
+	char *fin = s+n-1,
+		 aux;
+
+	while(s<fin)
+	{
+		aux = *s;
+		*s = *fin;
+		*fin = aux;
+		s++;
+		fin--;
+	}
+}
+
+void decrementar(char *s, int n)
+{
+	int decre=0;
+	while(decre<0)
+	{
+		decre++;
+		*s -= decre;
+		s++;
+	}
+}
+
+/*char *cortarCadena(char *s, char c)
+{
+
+}*/
+
+char *agregarCadena(char *s1, const char *s2)
+{
+//Precondicion: s1 tiene que tener lugar sufiente para agregar s2
+	char *orig = s1;
+
+	while(*orig)
+		orig++;
+
+    orig++;
+    if(*orig=='\0')
+        orig--;
+
+	while(*s2 != '\0' && *s2)
+		*orig++ = *s2++;
+
+	*orig = '\0';
+
+	return s1;
+}
+
+char *encontrarCaracter(char *s, const char letra)
+{
+	while(*s && *s!=letra)
+		s++;
+
+	if(*s=='\0')
+		return NULL;
+
+	return s;
+}
+
+int longitudCadena(const char *s)
+{
+	int cant=0;
+
+	while(*s++)
+		cant++;
+
+	return cant;
+}
+
+char *reemplazar(char *cad, char *sub, char *nue)
+{
+	char *orig = cad;
+	int tamNue = longitudCadena(nue),
+		tamSub = longitudCadena(sub),
+		dif = tamNue - tamSub;
+    while(cad && *cad)
+	{
+		cad = encontrarCadena(cad, sub);
+        if(cad && *cad)
+        {
+            if(dif==0)
+                copiar1a1(cad,nue);
+            if(dif>0)
+            {
+                desplazarCadena(cad+tamSub, dif);
+                copiar1a1(cad,nue);
+            }
+            else
+            {
+                copiarCadena(cad+tamNue, cad+tamSub);
+                copiar1a1(cad,nue);
+            }
+        }
+	}
+
+	return orig;
+}
+
+char *encontrarCadena(char *cad, char *s)
+{
+	char *sub = s,
+		 *posSub;
+	int tamS = longitudCadena(s),
+		cont=0;
+
+	while(*cad!=*s && *cad!='\0')
+		cad++;
+
+	while(*cad!='\0')
+	{
+		posSub = cad;
+		while(*cad==*s)
+		{
+			cad++;
+			s++;
+			cont++;
+		}
+
+		if(cont==tamS)
+			return posSub;
+
+        s = sub;
+		cont=0;
+	}
+
+	return NULL;
+}
+
+void copiar1a1(char *dest, const char *orig)
+{
+    char *s = dest;
+	while(*orig)
+		*s++ = *orig++;
+}
+
+void desplazarCadena(char *orig, int desp)
+{
+    char *s = orig, //a orig no lo toco.
+         *finCad;
+
+    while(*s) //s va al final de la cadena
+        s++;
+
+    finCad = s+desp; //finCad va al final mas el desplazamiento
+
+    while(s >= orig)
+        *finCad-- = *s--;
+}

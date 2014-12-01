@@ -20,4 +20,6 @@ void mostrarArchivoBinario(FILE *);
 void mostrarArchivoTexto(FILE *);
 int llenarBinario();
 
+
+
 #endif // ARCHIVOS_H_INCLUDED

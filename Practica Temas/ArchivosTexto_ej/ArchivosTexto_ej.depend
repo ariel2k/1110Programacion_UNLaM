@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1417399755 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\practica temas\archivostexto_ej\archivostexto.c
+	"archivosTexto.h"
+
+1417399285 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\practica temas\archivostexto_ej\archivostexto.h
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+
+1417399884 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\practica temas\archivostexto_ej\main.c
+	<stdio.h>
+	<stdlib.h>
+	"archivosTexto.h"
+

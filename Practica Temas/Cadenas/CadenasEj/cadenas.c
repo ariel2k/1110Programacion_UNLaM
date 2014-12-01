@@ -109,7 +109,7 @@ int aEntero(const char *cad)
 	return signo=='-' ? -acum : acum;
 }
 
-/*char *aCaracter(char *s, int n, int base)
+char *aCaracter(char *s, int n, int base)
 {
 	char *ini,
 		 *fin,
@@ -148,8 +148,8 @@ int aEntero(const char *cad)
 		fin--;
 	}
 
-	return
-}*/
+	return s;
+}
 
 
 /* Ej parcial */
@@ -165,10 +165,10 @@ char *decodificar (char *cad)
 		if(*orig >= '2' && *orig <= '9')
 		{
 			int cant = *orig - '0'; //obtengo el valor numerico
+			copiarCadena(orig, orig+1);
 			invertir(orig, cant);
 			decrementar(orig, cant);
 			//mover(dest, orig, cant);
-			copiarCadena(dest, orig);
 			dest += cant;
 			orig += cant;
 		}
@@ -194,19 +194,26 @@ void invertir (char *s, int n)
 
 void decrementar(char *s, int n)
 {
-	int decre=0;
-	while(decre<0)
+	int val=1;
+	while(val<=n && *s)
 	{
-		decre++;
-		*s -= decre;
+		*s -= val;
 		s++;
+		val++;
 	}
 }
 
-/*char *cortarCadena(char *s, char c)
+char *cortarCadena(char *s, int pos)
 {
+	char *cad = s;
 
-}*/
+	while(*cad && pos-- > 0)
+		cad++;
+
+	*cad = '\0';
+
+	return s;
+}
 
 char *agregarCadena(char *s1, const char *s2)
 {

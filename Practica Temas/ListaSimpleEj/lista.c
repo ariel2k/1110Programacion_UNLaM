@@ -1,11 +1,5 @@
-#include <stdio.h>
-#include <conio.h>
 #include "lista.h"
-#include "comparar.h"
 
-#define CLA_DUP 4
-#define SIN_MEM 5
-#define TODO_BIEN 1
 
 void crearLista (t_lista *p)
 {
@@ -42,14 +36,14 @@ int ponerAlFinal 	 (t_lista *p, const t_info *d)
 	return 1;
 }
 
-int insertarEnOrden  (t_lista *p, const t_info *d, int (*comparar)(const t_info *, const t_info *))
+int insertarEnOrden  (t_lista *p, const t_info *d)
 {
 	t_nodo *nue;
-	while (*p && comparar(d, &(*p)->info)>0)
+	while (*p && compararINT(d->legajo, (*p)->info.legajo)>0)
 		p = &(*p)->sig;
-	if(*p && comparar(d,&(*p)->info)==0)
+	if(*p && compararINT(d->legajo,(*p)->info.legajo)==0)
 	{
-		acumular(&(*p)->info,d);
+		//acumular(&(*p)->info,d);
 		return CLA_DUP;
 	}
 	nue=(t_nodo *)malloc(sizeof(t_nodo));
@@ -61,7 +55,7 @@ int insertarEnOrden  (t_lista *p, const t_info *d, int (*comparar)(const t_info 
 	return TODO_BIEN;
 }
 
-void ordernarListaBurbu (t_lista *p)
+/*void ordernarListaBurbu (t_lista *p)
 {
 	int marca=1;
 	t_lista *q;
@@ -73,7 +67,7 @@ void ordernarListaBurbu (t_lista *p)
 			q=p;
 			while((*p)->sig)
 			{
-				if(comparar(&(*p)->info, &(*q)->info)>0)
+				if(compararINT((*p)->info.legajo, (*q)->info.legajo)>0)
 				{
 					marca=1;
 					act=*q;
@@ -84,40 +78,40 @@ void ordernarListaBurbu (t_lista *p)
 				q=&(*q)->sig;
 			}
 		}
-}
+}*/
 
 /* Eliminar nodos de X clave */
 //La lista no esta ordenada por la clave que queres eliminar
-int eliminarClave_desordenado(t_lista *p, const t_info *d) 
+int eliminarClave_desordenado(t_lista *p, const t_info *d)
 {
 	t_nodo *aux;
 	int cant=0;
-	
+
 	while(*p)
 	{
-		if(comparar(&(*p)->info, d) == 0)
+		if(compararCHAR((*p)->info.cargo, d->cargo) == 0)
 		{
 			aux = *p;
 			*p = aux->sig;
 			free(aux);
-			n++;
+			cant++;
 		}
 		else
 			p=&(*p)->sig;
 	}
 
-	return n;
+	return cant;
 }
 
-int eliminarClave_ordenado(t_lista *p, const t_info *d) 
+int eliminarClave_ordenado(t_lista *p, const t_info *d)
 {
 	t_nodo *aux;
-	int cant=0;
+	int n=0;
 
-	while(*p && comparar(d, &(*p)->si) > 0)
+	while(*p && compararINT((*p)->info.legajo, d->legajo) != 0)
 		p=&(*p)->sig;
 
-	while(*p && comparar(d, &(*p)->si)==0)
+	while(*p && compararINT((*p)->info.legajo, d->legajo)==0)
 	{
 		aux = *p;
 		*p = aux->sig;
@@ -126,4 +120,118 @@ int eliminarClave_ordenado(t_lista *p, const t_info *d)
 	}
 
 	return n;
+}
+
+int listaVacia (t_lista *p)
+{
+	return *p==NULL;
+}
+
+void mostrarLista_Columna(const t_lista *p)
+{
+    int i=0;
+	printf("==========================================LISTA=========================================");
+	printf("\n| Legajo     Apellido y nombre                  Cargo    Dir Nodo     Dir Sig          |\n");
+	while(*p)
+	{
+		printf("| %5d   %-35s %-9s %9p %9p %9p  |\n",
+         (*p)->info.legajo, (*p)->info.apyn, (*p)->info.cargo, *p, (*p)->sig, p);
+		p = &(*p)->sig;
+		i++;
+	}
+	printf("|Total: %2d nodos en la lista.                                                          |"
+        "\n----------------------------------------------------------------------------------------\n",i);
+}
+
+int compararINT(const int d1, const int d2)
+{
+    return d1-d2;
+}
+
+int compararCHAR(const char *s1, const char *s2)
+{
+    return strcmp(s1, s2);
+}
+
+int cantidadNodos(t_lista *p)
+{
+	int cant=0;
+
+	while(*p)
+	{
+		p=&(*p)->sig;
+		cant++;
+	}
+
+	return cant;
+}
+
+int eliminarUnicos(t_lista *p)
+{
+	t_lista *q=p;
+	t_nodo *aux;
+	int cant,
+        CantidadNodosBorrados=0;
+
+	while(*q)
+	{
+	    cant=0;
+	    aux = *p;
+
+	    while(aux && cant<2) //recorro toda la lista exceptuando el q y busco si hay una coincidencia
+        {
+            if(compararCHAR(aux->info.cargo, (*q)->info.cargo )==0)
+                cant++;
+            aux = aux->sig;
+        }
+
+        if(cant==1) //Si no hay coincidencia, se borra
+        {
+            aux = *q;
+            *q = aux->sig;
+            free(aux);
+            cant=0;
+            CantidadNodosBorrados++;
+        }
+        else
+            q = &(*q)->sig;
+	}
+
+	return CantidadNodosBorrados;
+}
+
+int eliminarDuplicados(t_lista *p)
+{
+	t_nodo *aux;
+	t_lista *q;
+	int marca,
+        cont=0;
+	while(*p)
+	{
+		q = &(*p) -> sig;
+	    marca = 0;
+	    while(*q)
+	    {
+	    	if(compararCHAR((*p)->info.cargo, (*q)->info.cargo) == 0)
+	    	{
+	            aux = *q;
+	            *q = aux -> sig;
+	            free(aux);
+	            marca = 1;
+	            cont++;
+	        }
+	        else
+	            q = &(*q) -> sig;
+	    }
+	    if(marca)
+	    {
+	        aux = *p;
+	        *p = aux -> sig;
+	        free(aux);
+	        cont++;
+	    }
+	    else
+	        p = &(*p) -> sig;
+	}
+	return cont;
 }

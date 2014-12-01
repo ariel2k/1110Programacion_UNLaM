@@ -20,7 +20,8 @@ int main()
          nue1[]="Sebi",
          sub2[]="Sebi",
          nue2[]="Loportidio",
-         deco[]="hola4todobien2que3haces4saludos";
+         deco[]="3SZL49994",
+         deco2[]="ex2tua6kjveqtstim3dnvnte";
     int cmp;
 
     printf("=======Inicio programa=======\n");
@@ -75,6 +76,11 @@ int main()
     printf("\n====A Entero====\n");
     printf("DNI: %d / DNI*2: %d\n", aEntero(dni), 2*aEntero(dni) );
 
+    /* cortar Cadena */
+    puts("\n====Cortar cadena====");
+    puts(cadena);
+    puts(cortarCadena(cadena, 6));
+
     /* Agregar Cadena */
     printf("\n====Agrear cadena====\n");
     printf("cad1: %s \tcad2: %s\n",
@@ -90,8 +96,12 @@ int main()
     printf("\n====Longitud cadena====\n"
             "Cadena: %s -> Longitud: %d\n", nombre1, longitudCadena(nombre1));
 
+    /* Decodificar */
     printf("\n====decodificar====\n");
+    puts(deco);
     puts(decodificar(deco));
+    puts(deco2);
+    puts(decodificar(deco2));
 
     /* reemplazar cadena */
     printf("\n====Reemplazar Cadena====\n");

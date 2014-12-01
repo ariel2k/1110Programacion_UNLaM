@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1417351649 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\practica temas\cadenas\cadenasej\main.c
+1417391976 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\practica temas\cadenas\cadenasej\main.c
 	<stdio.h>
 	<stdlib.h>
 	"cadenas.h"
 
-1417349780 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\practica temas\cadenas\cadenasej\cadenas.h
+1417390574 d:\ariel\instituciones\unlam\1110 - programación\ejercicios\practica temas\cadenas\cadenasej\cadenas.h
 	<stdio.h>
 	<stdlib.h>
 
-1417351192 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\practica temas\cadenas\cadenasej\cadenas.c
+1417391883 source:d:\ariel\instituciones\unlam\1110 - programación\ejercicios\practica temas\cadenas\cadenasej\cadenas.c
 	"cadenas.h"
 
